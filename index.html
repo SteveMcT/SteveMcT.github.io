@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wudeo</title>
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/toggle.js"></script>
+    <script src="js/main.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <form id="searchField">
+            <input type="text" id="videoInput" placeholder="Search">
+            <button id="searchBtn"><span class="material-icons">search</span></button>
+        </form>
+        <button id="toggleMenu" onclick="toggleMenu()"><span class="material-icons"> menu </span></button>
+        <button id="userIcon"><span class="material-icons">person</span></button>
+        <button id="addPerson" onclick="changeAddPerson()"><span class="material-icons"> person_add_alt_1 </span><p>Add member</p></button>
+    </header>
+
+    <main>
+        <div class="menu menuIn" id="menu">
+            <button class="menuButton menuButtonActive" onclick="//changeToggleThemes()"><span class="material-icons">home</span><p>Home</p></button>
+            <button class="menuButton" onclick="//changeToggleThemes()"><span class="material-icons">color_lens</span><p>Theme</p></button>
+            <button class="menuButton" onclick="//changeToggleThemes()"><span class="material-icons">language</span><p>Language</p></button>
+            <div id="smolStroke"></div>
+            <button class="menuButton" onclick="//changeToggleThemes()"><span class="material-icons">support_agent</span><p>Support</p></button>
+            <button class="menuButton" onclick="//changeToggleThemes()"><span class="material-icons">swap_calls</span><p>Change Host</p></button>
+            <button class="menuButton" onclick="//changeToggleThemes()"><span class="material-icons">low_priority</span><p>Toggle Chat</p></button>
+            <button class="menuButton" onclick="//changeToggleThemes()"><span class="material-icons">change_circle</span><p>Toggle Queue</p></button>
+            <button class="menuButton" onclick="//changeToggleThemes()"><span class="material-icons">all_inclusive</span><p>Watch</p></button>
+        </div>
+
+        <div id="video">
+            <video settings src=""></video>
+        </div>
+
+        <div id="chat">
+            <div id="selectionChat"></div>
+            <div id="chatPanel">
+
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+                <p>5</p>
+                <p>6</p>
+                <p>7</p>
+                <p>8</p>
+                <p>9</p>
+                <p>11</p>
+                <p>12</p>
+                <p>13</p>
+                <p>14</p>
+                <p>15</p>
+                <p>16</p>
+                <p>17</p>
+                <p>18</p>
+                <p>19</p>
+                <p>20</p>
+                <p>21</p>
+            </div>
+        </div>
+
+        <div id="language">
+            <button class="btnDesign" id="openAdd">German</button>
+            <button class="btnDesign" id="openAdd">English</button>
+        </div>
+
+        <div id="invite">
+            <span class="material-icons"> person_add_alt_1 </span>
+            <p id="InvitationLink">https://www.youtube.com</p>
+            <button onclick="copyToClipboard($('#InvitationLink').text())" id="copyInviteLink">Copy Link</button>
+        </div>
+        <div id="themes">
+            <button onclick="//defaultColor()" class="btnDesign">Default</button>
+            <button class="btnDesign">Dark Orange</button>
+            <button class="btnDesign">Youtube</button>
+            <!-- <input oninput="changeBackgound($('#colorPicker').val())" type="color" name="" id="colorPicker"> -->
+        </div>
+
+        <div id="addToQueue">
+            <input id="queueLink" type="text">
+            <button onclick="addSong()" class="btnDesign">Add Song to Queue</button>
+        </div>
+    </main>
+
+    <footer>
+    </footer>
+</body>
+
+</html>

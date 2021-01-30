@@ -1,0 +1,354 @@
+$c1: #787672;
+$c2: #959688;
+$c4: rgb(182, 156, 111);
+$c5: #DEDED6;
+$background: rgb(24, 24, 24);
+$blue: rgb(62, 166, 255);
+@font-face {
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    src: url("../font/Roboto/Roboto-Bold.ttf");
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: "Roboto Mono", Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+body {
+    height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+    background: $background;
+}
+
+input,
+button {
+    outline: none;
+    border: none;
+    padding: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+header {
+    position: relative;
+    height: 40px;
+    background: rgb(41, 41, 41);
+    padding: 15px;
+    z-index: 2;
+    #searchField {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 18px;
+        #videoInput {
+            border-radius: 2px 0 0 2px;
+            color: #fff;
+            font-size: 16px;
+            width: 580px;
+            height: 30px;
+            margin: 0;
+            background: rgb(25, 25, 25);
+            border: 1px solid rgb(64, 64, 64);
+            padding: 2px 8px;
+            &:focus {
+                border: 1px solid rgb(48, 118, 202);
+            }
+        }
+        #searchBtn {
+            border: 1px solid rgb(64, 64, 64);
+            border-radius: 0 2px 2px 0;
+            padding: 7px 22px;
+            display: inline-flex;
+            background: rgb(64, 64, 64);
+            span {
+                font-size: 20px;
+                color: rgb(123, 123, 123);
+            }
+        }
+    }
+    #addPerson {
+        background: transparent;
+        font-size: 16px;
+        float: right;
+        border: 2px solid rgb(48, 118, 202);
+        padding: 2px 24px 2px 15px;
+        border-radius: 2px;
+        span {
+            color: $blue;
+            font-size: 25px;
+            padding: 3px;
+        }
+        p {
+            font-weight: bolder;
+            text-transform: uppercase;
+            color: $blue;
+            transform: translateY(-28%);
+            display: inline-block;
+            margin-left: 10px;
+        }
+    }
+    #toggleMenu {
+        background: transparent;
+        transition: .2s;
+        border-radius: 50%;
+        span {
+            font-size: 26px;
+            transition: .4s;
+            padding: 10px;
+        }
+        margin: -5px 0 0 -5px;
+        &:active {
+            background: #565656;
+        }
+    }
+    #userIcon {
+        float: right;
+        height: 40px;
+        width: 40px;
+        margin: 0 20px;
+        border-radius: 100%;
+        background: #000;
+        border: 2px solid transparent;
+        &:focus {
+            border: 2px solid rgb(62, 166, 255);
+        }
+        span {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            font-size: 26px;
+            color: rgb(204, 204, 204);
+        }
+    }
+}
+
+main {
+    #invite {
+        z-index: 2;
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        background: #00000077;
+        padding: 20px 60px;
+        border-radius: 20px;
+        span {
+            font-size: 90px;
+        }
+        p {
+            font-size: 25px;
+            margin: 20px 0;
+            background: #00000022;
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+        #copyInviteLink {
+            padding: 15px 20px;
+            background: #00000022;
+            font-size: 25px;
+            border-radius: 20px;
+        }
+    }
+    .menuOut {
+        width: 250px;
+        .menuButton {
+            padding: 10px 25px;
+            span {
+                font-size: 26px;
+                vertical-align: middle;
+                color: rgb(123, 123, 123);
+            }
+            p {
+                display: inline-flex;
+                margin-left: 20px;
+            }
+        }
+        #smolStroke {
+            width: 100%;
+            height: 2px;
+            background: #3d3d3d;
+            margin: 20px 0;
+        }
+    }
+    .menuIn {
+        position: relative;
+        left: 0;
+        width: 80px;
+        .menuButton {
+            padding: 20px 0;
+            span {
+                width: 100%;
+                font-size: 28px;
+                text-align: center;
+                color: rgb(123, 123, 123)
+            }
+            p {
+                text-align: center;
+                font-size: 10px;
+            }
+        }
+        #smolStroke {
+            display: none;
+        }
+        .menuButtonActive span {
+            color: rgb(221, 221, 221) !important;
+        }
+    }
+    .menu {
+        display: inline-block;
+        position: relative;
+        left: 0;
+        height: calc(100vh - 70px);
+        z-index: 1;
+        background: rgb(39, 39, 39);
+        .menuButton {
+            width: 100%;
+            background: transparent;
+            font-size: 16px;
+            text-align: left;
+            &:hover {
+                background: rgb(68, 68, 68);
+            }
+        }
+        .menuButtonActive {
+            background: rgb(68, 68, 68) !important;
+            span {
+                color: #fff !important;
+            }
+            &:hover {
+                background: rgb(91, 91, 91) !important;
+            }
+        }
+    }
+    #themes {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #00000077;
+        padding: 20px 60px;
+        border-radius: 20px;
+        #colorPicker {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            outline: none;
+            border: none;
+            padding: 6px;
+            border-radius: 20px;
+            width: 50%;
+            background: #00000055;
+        }
+    }
+    #video {
+        position: absolute;
+        margin: 30px 0 0 30px;
+        display: inline-block;
+        background: #fff;
+        height: 65%;
+        width: 60%;
+        background-image: url("../img/yt_vid.png");
+        background-size: contain;
+    }
+    #chat {
+        position: absolute;
+        background: rgb(24, 24, 24);
+        border: 1px solid rgb(48, 48, 48);
+        display: inline-block;
+        margin: 30px 30px 0 0;
+        height: 65%;
+        width: 28%;
+        right: 0;
+        #selectionChat {
+            background: rgb(32, 32, 32);
+            height: 60px;
+            width: 100%;
+        }
+        #chatPanel {
+            height: calc(100% - 60px);
+            overflow-y: scroll;
+        }
+         ::-webkit-scrollbar {
+            width: 18px;
+            padding: 14px;
+        }
+         ::-webkit-scrollbar-track {
+            background: rgb(12, 12, 12);
+        }
+         ::-webkit-scrollbar-thumb {
+            background: rgb(51, 51, 51);
+            border: 2px solid rgb(12, 12, 12);
+        }
+        p {
+            font-size: 20px;
+            margin: 10px;
+        }
+    }
+    #addToQueue {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #00000077;
+        padding: 20px 60px;
+        border-radius: 20px;
+        input {
+            font-size: 25px;
+            margin: 20px 0;
+            background: #00000022;
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+    }
+    #language {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #00000077;
+        padding: 20px 60px;
+        border-radius: 20px;
+    }
+}
+
+.btnDesign {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    margin: 10px 0;
+    padding: 12px 20px;
+    background: #00000022;
+    font-size: 25px;
+    border-radius: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+    header {
+        #searchField {
+            #videoInput {
+                width: 420px;
+            }
+        }
+        #addPerson {
+            padding: 2px 15px;
+            p {
+                display: none;
+            }
+        }
+    }
+}
