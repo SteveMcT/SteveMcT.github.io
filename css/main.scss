@@ -80,6 +80,7 @@ header {
     }
     #addPerson {
         background: transparent;
+        margin-top: -8px;
         font-size: 16px;
         float: right;
         border: 2px solid rgb(48, 118, 202);
@@ -88,7 +89,7 @@ header {
         span {
             color: $blue;
             font-size: 25px;
-            padding: 3px;
+            margin: 3px;
         }
         p {
             font-weight: bolder;
@@ -120,7 +121,7 @@ header {
         float: right;
         height: 40px;
         width: 40px;
-        margin: 0 20px;
+        margin: -8px 20px 0 20px;
         border-radius: 100%;
         background: #000;
         border: 2px solid transparent;

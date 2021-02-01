@@ -87,6 +87,7 @@ header #searchField #searchBtn span {
 
 header #addPerson {
   background: transparent;
+  margin-top: -8px;
   font-size: 16px;
   float: right;
   border: 2px solid #3076ca;
@@ -97,7 +98,7 @@ header #addPerson {
 header #addPerson span {
   color: #3ea6ff;
   font-size: 25px;
-  padding: 3px;
+  margin: 3px;
 }
 
 header #addPerson p {
@@ -136,7 +137,7 @@ header #userIcon {
   float: right;
   height: 40px;
   width: 40px;
-  margin: 0 20px;
+  margin: -8px 20px 0 20px;
   border-radius: 100%;
   background: #000;
   border: 2px solid transparent;
