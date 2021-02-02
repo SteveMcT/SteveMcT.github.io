@@ -20,7 +20,7 @@ $blue: rgb(62, 166, 255);
 }
 
 body {
-    height: 100vh;
+    height: 200vh;
     overflow-x: hidden;
     width: 100%;
     background: $background;
@@ -38,10 +38,12 @@ button {
 }
 
 header {
+    position: fixed;
     height: 24px;
     background: rgb(32, 32, 32);
     padding: 15px;
     z-index: 2;
+    width: 100%;
     #searchField {
         display: flex;
         position: absolute;
@@ -216,9 +218,10 @@ main {
     }
     .menu {
         display: inline-block;
-        position: relative;
+        top: 55px;
+        position: fixed;
         left: 0;
-        height: calc(100vh - 70px);
+        height: calc(100vh - 55px);
         z-index: 1;
         background: rgb(32, 32, 32);
         .menuButton {
@@ -265,10 +268,10 @@ main {
         }
     }
     .outerWrapper {
+        margin-top: 55px;
         position: absolute;
         left: 60px;
         display: inline;
-        height: 100%;
         width: calc(100% - 70px);
         .wrapper {
             width: 100%;

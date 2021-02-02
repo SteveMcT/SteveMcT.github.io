@@ -14,7 +14,7 @@
 }
 
 body {
-  height: 100vh;
+  height: 200vh;
   overflow-x: hidden;
   width: 100%;
   background: #181818;
@@ -32,10 +32,12 @@ button {
 }
 
 header {
+  position: fixed;
   height: 24px;
   background: #202020;
   padding: 15px;
   z-index: 2;
+  width: 100%;
 }
 
 header #searchField {
@@ -250,9 +252,10 @@ main .menuIn .menuButtonActive span {
 
 main .menu {
   display: inline-block;
-  position: relative;
+  top: 55px;
+  position: fixed;
   left: 0;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 55px);
   z-index: 1;
   background: #202020;
 }
@@ -310,10 +313,10 @@ main #themes #colorPicker {
 }
 
 main .outerWrapper {
+  margin-top: 55px;
   position: absolute;
   left: 60px;
   display: inline;
-  height: 100%;
   width: calc(100% - 70px);
 }
 
