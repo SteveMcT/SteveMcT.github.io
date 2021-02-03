@@ -81,11 +81,11 @@ header {
     }
     #addPerson {
         background: transparent;
-        margin-top: -8px;
-        font-size: 16px;
+        margin-top: -7px;
+        font-size: 14px;
         float: right;
         border: 2px solid rgb(48, 118, 202);
-        padding: 2px 24px 2px 15px;
+        padding: 1px 24px 1px 15px;
         border-radius: 2px;
         span {
             color: $blue;
@@ -96,7 +96,7 @@ header {
             font-weight: bolder;
             text-transform: uppercase;
             color: $blue;
-            transform: translateY(-28%);
+            transform: translateY(-40%);
             display: inline-block;
             margin-left: 10px;
         }
@@ -120,8 +120,8 @@ header {
     }
     #userIcon {
         float: right;
-        height: 40px;
-        width: 40px;
+        height: 38px;
+        width: 38px;
         margin: -8px 30px 0 20px;
         border-radius: 100%;
         background: #000;
@@ -298,15 +298,21 @@ main {
                     background: rgb(32, 32, 32);
                     #dropdown-select {
                         margin: 0;
-                        background: rgba(255, 255, 255, .3);
                         outline: none;
+                        background: transparent;
+                        border: none;
+                        top: 50%;
+                        transform: translateX(-50%);
+                        margin: 20px;
+                        margin-left: 80px;
+                        font-size: 16px;
                         option {
                             background: transparent;
                         }
                     }
                 }
                 #chat-panel {
-                    height: calc(100% - 140px);
+                    height: calc(100% - 190px);
                     overflow-y: scroll;
                     position: relative;
                 }
@@ -330,13 +336,25 @@ main {
                 }
                 #chat-footer {
                     position: relative;
-                    bottom: 0;
-                    height: 140px;
+                    bottom: 10px;
+                    height: 190px;
                     background: rgb(32, 32, 32);
-                    #smol-line {
-                        width: 80%;
-                        height: 1px;
+                    #message {
                         position: relative;
+                        overflow-wrap: break-word;
+                        white-space: pre-wrap;
+                        width: 80%;
+                        height: auto;
+                        background: transparent;
+                        left: 10%;
+                        border-bottom: 2px solid rgb(172, 172, 172);
+                        font-size: 14px;
+                    }
+                    #smol-line {
+                        position: relative;
+                        width: 80%;
+                        left: 10%;
+                        height: 1px;
                         margin: 5px;
                         background: rgb(48, 48, 48);
                     }
@@ -349,6 +367,9 @@ main {
                         transform: translateX(-50%);
                         color: rgb(172, 172, 172);
                         background: transparent;
+                        &:hover {
+                            color: rgb(232, 232, 232);
+                        }
                     }
                 }
             }

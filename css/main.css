@@ -88,11 +88,11 @@ header #searchField #searchBtn span {
 
 header #addPerson {
   background: transparent;
-  margin-top: -8px;
-  font-size: 16px;
+  margin-top: -7px;
+  font-size: 14px;
   float: right;
   border: 2px solid #3076ca;
-  padding: 2px 24px 2px 15px;
+  padding: 1px 24px 1px 15px;
   border-radius: 2px;
 }
 
@@ -106,8 +106,8 @@ header #addPerson p {
   font-weight: bolder;
   text-transform: uppercase;
   color: #3ea6ff;
-  -webkit-transform: translateY(-28%);
-          transform: translateY(-28%);
+  -webkit-transform: translateY(-40%);
+          transform: translateY(-40%);
   display: inline-block;
   margin-left: 10px;
 }
@@ -136,8 +136,8 @@ header #toggleMenu:active {
 
 header #userIcon {
   float: right;
-  height: 40px;
-  width: 40px;
+  height: 38px;
+  width: 38px;
   margin: -8px 30px 0 20px;
   border-radius: 100%;
   background: #000;
@@ -354,8 +354,15 @@ main .outerWrapper .wrapper #chat #chat-header {
 
 main .outerWrapper .wrapper #chat #chat-header #dropdown-select {
   margin: 0;
-  background: rgba(255, 255, 255, 0.3);
   outline: none;
+  background: transparent;
+  border: none;
+  top: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin: 20px;
+  margin-left: 80px;
+  font-size: 16px;
 }
 
 main .outerWrapper .wrapper #chat #chat-header #dropdown-select option {
@@ -363,7 +370,7 @@ main .outerWrapper .wrapper #chat #chat-header #dropdown-select option {
 }
 
 main .outerWrapper .wrapper #chat #chat-panel {
-  height: calc(100% - 140px);
+  height: calc(100% - 190px);
   overflow-y: scroll;
   position: relative;
 }
@@ -393,15 +400,28 @@ main .outerWrapper .wrapper #chat p {
 
 main .outerWrapper .wrapper #chat #chat-footer {
   position: relative;
-  bottom: 0;
-  height: 140px;
+  bottom: 10px;
+  height: 190px;
   background: #202020;
 }
 
-main .outerWrapper .wrapper #chat #chat-footer #smol-line {
-  width: 80%;
-  height: 1px;
+main .outerWrapper .wrapper #chat #chat-footer #message {
   position: relative;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  width: 80%;
+  height: auto;
+  background: transparent;
+  left: 10%;
+  border-bottom: 2px solid #acacac;
+  font-size: 14px;
+}
+
+main .outerWrapper .wrapper #chat #chat-footer #smol-line {
+  position: relative;
+  width: 80%;
+  left: 10%;
+  height: 1px;
   margin: 5px;
   background: #303030;
 }
@@ -416,6 +436,10 @@ main .outerWrapper .wrapper #chat #chat-footer #chat-hide {
           transform: translateX(-50%);
   color: #acacac;
   background: transparent;
+}
+
+main .outerWrapper .wrapper #chat #chat-footer #chat-hide:hover {
+  color: #e8e8e8;
 }
 
 main #addToQueue {
