@@ -324,12 +324,12 @@ main .outerWrapper .wrapper {
   width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 3fr 1.4fr;
-      grid-template-columns: 3fr 1.4fr;
+  -ms-grid-columns: 3fr 1.2fr;
+      grid-template-columns: 3fr 1.2fr;
 }
 
 main .outerWrapper .wrapper #video {
-  height: 65vh;
+  height: 75vh;
   margin: 20px 0 0 20px;
   background: #fff;
   background-image: url("../img/yt_vid.png");
@@ -337,21 +337,39 @@ main .outerWrapper .wrapper #video {
 }
 
 main .outerWrapper .wrapper #chat {
-  height: 65vh;
+  height: 75vh;
   margin: 20px 0 0 20px;
   background: #181818;
   border: 1px solid #303030;
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
-main .outerWrapper .wrapper #chat #selectionChat {
-  background: #202020;
-  height: 60px;
+main .outerWrapper .wrapper #chat #chat-header {
+  position: relative;
   width: 100%;
+  height: 60px;
+  background: #202020;
 }
 
-main .outerWrapper .wrapper #chat #chatPanel {
-  height: calc(100% - 60px);
+main .outerWrapper .wrapper #chat #chat-header #dropdown-select {
+  margin: 0;
+  background: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+main .outerWrapper .wrapper #chat #chat-header #dropdown-select option {
+  background: transparent;
+}
+
+main .outerWrapper .wrapper #chat #chat-panel {
+  height: calc(100% - 140px);
   overflow-y: scroll;
+  position: relative;
+}
+
+main .outerWrapper .wrapper #chat #chat-queue {
+  display: none;
 }
 
 main .outerWrapper .wrapper #chat ::-webkit-scrollbar {
@@ -371,6 +389,33 @@ main .outerWrapper .wrapper #chat ::-webkit-scrollbar-thumb {
 main .outerWrapper .wrapper #chat p {
   font-size: 20px;
   margin: 10px;
+}
+
+main .outerWrapper .wrapper #chat #chat-footer {
+  position: relative;
+  bottom: 0;
+  height: 140px;
+  background: #202020;
+}
+
+main .outerWrapper .wrapper #chat #chat-footer #smol-line {
+  width: 80%;
+  height: 1px;
+  position: relative;
+  margin: 5px;
+  background: #303030;
+}
+
+main .outerWrapper .wrapper #chat #chat-footer #chat-hide {
+  text-transform: uppercase;
+  position: relative;
+  font-size: 10px;
+  font-weight: 900;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #acacac;
+  background: transparent;
 }
 
 main #addToQueue {
